@@ -1,0 +1,21 @@
+[{
+  "question": "Which of the following is a common warning sign of a visa and immigration scam targeting international students?",
+  "options": ["A request for expedited visa processing fees through unofficial channels.", "Receiving official communication from the embassy or consulate regarding visa processing.", "Providing personal information to a stranger claiming to be an immigration consultant.", "Agreeing to pay for additional services to enhance your visa application."],
+  "answer": 0
+}, {
+  "question": "What should you do if you receive an email or phone call claiming to expedite your visa processing in exchange for a fee?",
+  "options": ["Provide payment information to secure faster visa processing.","Report the communication to the appropriate authorities and verify the legitimacy of the request.","Ignore the message and wait for further instructions.","Share the communication with friends to warn them about potential scams."],
+  "answer": 1
+}, {
+    "question": "What should you do if a landlord claims to be overseas and unable to meet in person for a property viewing?",
+  "options": ["Agree to send payment to secure the property without viewing it.", "Schedule an in-person viewing of the property at a mutually convenient time.", "Provide your personal information and rental deposit upfront to secure the property.","Assume the landlord's request is legitimate and proceed with the rental agreement."],
+  "answer": 1
+}, {
+    "question": "What is a common tactic used by scammers to create urgency in their banking scams?",
+  "options": ["Offering free financial advice.", "Asking for feedback on recent banking transactions.", "Threatening legal action if you don't comply.", "Providing detailed explanations of the banking system."],
+  "answer": 2
+}, {
+    "question": "Which of the following actions can help you protect yourself from falling victim to banking scams?",
+  "options": ["Responding to emails requesting urgent account updates without verifying their legitimacy.", "Sharing your account details with anyone who claims to be from the bank.", "Providing your Social Security number to verify your identity.", "Reporting suspicious activity to your bank and local authorities."],
+  "answer": 3
+}]
