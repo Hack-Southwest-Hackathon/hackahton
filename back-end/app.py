@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify, session, render_template
+from flask_cors import CORS
 from quiz import get_questions
 from fraudbot import chatbot
 import json
 
+
 app = Flask(__name__)
+CORS(app)
 chatbot = chatbot("Bank")
 
 gptoriginal = ["Hello! This is Dan from the bank. I'm here to inform you that we have detected a suspected fraudulent purchase on your account.",
