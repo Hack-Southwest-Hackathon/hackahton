@@ -4,37 +4,56 @@ import { ThreeDots } from 'react-loading-icons'
 function SimPage() {
     const [text, setText] = useState('');
     const [data, setData] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
+    const [conversation, setConversation] = useState([])
 
   useEffect(() => {
     const fetchData = () => {
-      setIsLoading(true);
       fetch('http://127.0.0.1:5100/calls')
         .then(response => response.json())
         .then(data => {
-            console.log(data)
+            setConversation(prev=>[...prev, data])
+            setIsLoading(false);
             setData(data);
         })
-      setIsLoading(false);
     };
 
     fetchData();
   }, []);
 
+  const postUserInput = async () => {
+    setIsLoading(true);
+      const response = await fetch('http://127.0.0.1:5100/calls', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ userinput: text }),
+      });
+      const data = await response.json();
+      console.log(data)
+      setConversation(prevConversation => [...prevConversation, data]);
+      setIsLoading(false);
+      setData(data);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevents the page from reloading when pressing "Enter"
     // Do something with the text here (e.g., send it to the backend)
-    console.log(text);
+    setConversation(prev=>[...prev, {userinput: text}])
+    postUserInput()
     setText('');
   };
+  console.log(conversation)
 
   return (
     <div>
         <div>
-            {isLoading ? (
+            {conversation.map((msg,i)=><div key={i}>{msg.gptresponse ? msg.gptresponse : msg.userinput}</div>)}
+        </div>
+        <div>
+            {isLoading && (
                 <ThreeDots fill='gray'/>
-            ) : (
-                <p></p>
             )}
         </div>
         <form onSubmit={handleSubmit}>
