@@ -19,8 +19,8 @@ class chatbot():
                     model="gpt-3.5-turbo-16k",
                     messages=[{"role": "system", "content": self.prompt}],
                     stream=True)
-        self.messagehistory = [{"role":"system","content":self.prompt},{"role":"assistant","content":" ".join([part.choices[0].delta.content or "" for part in self.stream])}]
-        print(self.messagehistory[-1]["content"])
+        self.messagehistory = [{"role":"system","content":self.prompt},{"role":"assistant","content":"".join([part.choices[0].delta.content or "" for part in self.stream])}]
+        # print(self.messagehistory[-1]["content"])
         # self.engine = pyttsx3.init()
         # self.engine.say(self.messagehistory[-1]["content"])
         # self.engine.runAndWait()
@@ -42,4 +42,4 @@ class chatbot():
     def getgoodorbad(self):
         return self.good
 
-Dan= chatbot(False)
+Dan= chatbot(True)
