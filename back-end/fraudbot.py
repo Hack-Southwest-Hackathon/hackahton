@@ -4,18 +4,13 @@ import pyttsx3
 
 
 class chatbot():
-    def __init__(self, good):
+    def __init__(self, mode:str) -> None:
         self.client = OpenAI(
             api_key="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")
 
-        self.good = good
-
-        if good:
-            with open(os.path.dirname(os.path.abspath(__file__)) + '/gptConfigGood.txt', 'r', encoding='utf-8') as prompt:
-                self.prompt = prompt.read()
-        else:
-            with open(os.path.dirname(os.path.abspath(__file__)) + '/gptConfigEvil.txt', 'r', encoding='utf-8') as prompt:
-                self.prompt = prompt.read()
+        self.mode = mode
+        with open(os.path.dirname(os.path.abspath(__file__)) + '/' + self.mode + '.txt', 'r', encoding='utf-8') as prompt:
+            self.prompt = prompt.read()
         self.stream = self.client.chat.completions.create(
             model="gpt-3.5-turbo-16k",
             messages=[{"role": "system", "content": self.prompt}],
@@ -44,7 +39,9 @@ class chatbot():
         return self.messagehistory[-1]["content"]
 
     def getgoodorbad(self):
-        return self.good
+        if self.mode in ["Bank","visa"]:
+            return False
+        return True
 
 
 Dan = chatbot(True)
