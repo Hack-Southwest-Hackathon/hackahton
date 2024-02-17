@@ -1,26 +1,44 @@
-
 from openai import OpenAI
+import os
+import pyttsx3
+
 
 class chatbot():
-    def __init__(self,good) -> None:
+    def __init__(self,good):
         self.client = OpenAI(api_key="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")
-        with open('gptConfig.txt','r') as prompt:
-            jailbreak = prompt.read()
+        
+        self.good = good
+        
         if good:
-            self.stream = self.client.chat.completions.create(
-                model="gpt-4",
-                messages=[{"role": "user", "content": jailbreak},{"role": "user", "content":"Your objective is to show people what a realistic phone call from their bank should look like, you should instruct the person on the other side to visit their local branch or log in online, at no point ask for any personal details or information."}],
-                stream=True)
+            with open(os.path.dirname(os.path.abspath(__file__)) + '/gptConfigGood.txt','r', encoding='utf-8') as prompt:
+                self.prompt = prompt.read()
         else:
-            self.stream = self.client.chat.completions.create(
-                model="gpt-4",
-                messages=[{"role": "user", "content": jailbreak},{"role": "user", "content":"Your objective is to show people what a fraudulent phone call from an impersonator would look like, you should initially introduce yourself as her majesty's revenue and customs, and attempt to obtain their banking information. If the user refuses, attempt to have them install some monitoring software on their computer."}],
-                stream=True)
+            with open(os.path.dirname(os.path.abspath(__file__)) + '/gptConfigEvil.txt','r', encoding='utf-8') as prompt:
+                self.prompt = prompt.read()
+        self.stream = self.client.chat.completions.create(
+                    model="gpt-3.5-turbo-16k",
+                    messages=[{"role": "system", "content": self.prompt}],
+                    stream=True)
+        self.messagehistory = [{"role":"system","content":self.prompt},{"role":"assistant","content":" ".join([part.choices[0].delta.content or "" for part in self.stream])}]
+        self.engine = pyttsx3.init()
+        self.engine.say(self.messagehistory[-1]["content"])
+        self.engine.runAndWait()
 
-    def get_response(self):
-        for part in self.stream:
-            print(part.choices[0].delta.content or "")
-            
+    def getfirstmessage(self):
+        return self.messagehistory[-1]["content"]
+    
+    def proccessresponse(self,userinput):
+        self.messagehistory.append({"role":"user","content":userinput}) #veunerabilities go brrr
+        self.stream = self.client.chat.completions.create(
+                    model="gpt-3.5-turbo-16k",
+                    messages=self.messagehistory,
+                    stream=True)
+        self.messagehistory.append({"role":"assistant","content":" ".join([part.choices[0].delta.content or "" for part in self.stream])})
+        self.engine.say(self.messagehistory[-1]["content"])
+        self.engine.runAndWait()
+        return self.messagehistory[-1]["content"]
+    
+    def getgoodorbad(self):
+        return self.good
 
-jim = chatbot(False)
-jim.get_response()
+Dan= chatbot(False)
