@@ -1,2 +1,1 @@
-# hackahton
-ez win
+# Hackathon
