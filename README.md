@@ -27,6 +27,32 @@ The fraud chatbot we used is a modified copy of openai's gpt3.5-turbo making use
 The chatbot is controlled via the ```fraudbot.py``` python file  
 
 Its depends only on the openai api wrapper which can be installed via:
-```python
-
+```bash
+pip install openai
 ```
+
+- # usage
+First the user should select a model of to use the options are:
+- Bank
+- Visa
+- Housing  
+ 
+Each named after their respective scam simulation.  
+Next, an object of the chosen model may be initialized - i.e:
+```python
+Dan = Chatbot(<model choice>)
+```
+
+Then, the bot's initial response may be fetched via:
+
+```python
+Dan.getfirstmessage()
+```
+
+Finally, users can send a message and obtain a response from the bot and check weather or not it had fraudulent intent, by using the commands:
+
+```python
+Dan.proccessresponse()
+Dan.getgoodorbad()
+```
+a
