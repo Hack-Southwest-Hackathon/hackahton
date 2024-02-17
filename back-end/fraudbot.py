@@ -20,9 +20,10 @@ class chatbot():
                     messages=[{"role": "system", "content": self.prompt}],
                     stream=True)
         self.messagehistory = [{"role":"system","content":self.prompt},{"role":"assistant","content":" ".join([part.choices[0].delta.content or "" for part in self.stream])}]
-        self.engine = pyttsx3.init()
-        self.engine.say(self.messagehistory[-1]["content"])
-        self.engine.runAndWait()
+        print(self.messagehistory[-1]["content"])
+        # self.engine = pyttsx3.init()
+        # self.engine.say(self.messagehistory[-1]["content"])
+        # self.engine.runAndWait()
 
     def getfirstmessage(self):
         return self.messagehistory[-1]["content"]
