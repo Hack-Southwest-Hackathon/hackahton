@@ -57,9 +57,12 @@ def calls():
 
     if request.method == "POST":
         data = request.get_json()
-
+        if chatbot.calls < 5:
+            ooa = "false"
+        else:
+            ooa = "true"
         x = {
-            "outofattempts": "false",
+            "outofattempts": ooa,
             "gptresponse": chatbot.proccessresponse(data['userinput'])
         }
 
