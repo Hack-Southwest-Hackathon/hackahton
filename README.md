@@ -55,4 +55,3 @@ Finally, users can send a message and obtain a response from the bot and check w
 Dan.proccessresponse()
 Dan.getgoodorbad()
 ```
-a
