@@ -70,8 +70,8 @@ def calls():
         #    "gptresponse": "GPT BANK CALL next"
         # }
 
-        if data['attempts'] == "5":
-            x["outofattempts"] = "true"
+        # if data['attempts'] == "5":
+        #   x["outofattempts"] = "true"
 
         return jsonify(x)
 
