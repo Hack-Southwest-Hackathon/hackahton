@@ -31,7 +31,6 @@ class chatbot():
                 "role": "system",
                 "content": self.prompt
             }],
-            max_tokens=100,
             stream=True)
 
         self.messagehistory = [{
@@ -68,7 +67,6 @@ class chatbot():
         self.stream = self.client.chat.completions.create(
             model="gpt-3.5-turbo-16k",
             messages=self.messagehistory,
-            max_tokens=100,
             stream=True)
 
         self.messagehistory.append({
