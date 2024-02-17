@@ -46,7 +46,7 @@ def calls():
     if request.method == "GET":
 
         # return chatbot.getfirstmessage()
-        return "GPT BANK CALL"
+        return jsonify("GPT BANK CALL")
 
     if request.method == "POST":
         data = request.get_json()

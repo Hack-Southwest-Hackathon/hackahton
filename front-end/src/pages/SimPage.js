@@ -1,8 +1,25 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ThreeDots } from 'react-loading-icons'
 
 function SimPage() {
     const [text, setText] = useState('');
+    const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = () => {
+      setIsLoading(true);
+      fetch('https://jsonplaceholder.typicode.com/todos/1')
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            setData(data);
+        })
+      setIsLoading(false);
+    };
+
+    fetchData();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault(); // Prevents the page from reloading when pressing "Enter"
@@ -13,7 +30,13 @@ function SimPage() {
 
   return (
     <div>
-        <ThreeDots fill='gray'/>
+        <div>
+            {isLoading ? (
+                <ThreeDots fill='gray'/>
+            ) : (
+                <p></p>
+            )}
+        </div>
         <form onSubmit={handleSubmit}>
             <input
                 type="text"
