@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify, session, render_template
-from quiz import get_question
+from quiz import get_questions
+# from fraudbot import chatbot
 
 
 app = Flask(__name__)
+# chatbot = chatbot(True)
 
 
 @app.route("/", methods=["GET", "POST"])
@@ -26,20 +28,22 @@ def read():
 @app.route("/quiz", methods=["GET", "POST"])
 def quiz():
     if request.method == "GET":
-        return get_question()
+        return get_questions()
 
     if request.method == "POST":
-        quiz.attempt(request.form['choice'])
-        return get_question()
+        quiz.attempt(request.get_json())
+        return get_questions()
 
 
 @app.route("/calls", methods=["GET", "POST"])
 def calls():
     if request.method == "GET":
-        return "GET Request"
+
+        return chatbot.getfirstmessage()
 
     if request.method == "POST":
-        return "POST Request"
+        print(chatbot.proccessresponse(request.get_json()))
+        return chatbot.proccessresponse(request.get_json())
 
 
 @app.route("/reflection", methods=["GET", "POST"])
@@ -48,8 +52,9 @@ def reflection():
         return "GET Request"
 
     if request.method == "POST":
-        return "POST Request"
+        print(request.get_json())
+        return jsonify(request.json)
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=6969)
+    app.run(debug=True, port=5100)
