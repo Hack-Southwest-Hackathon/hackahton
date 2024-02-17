@@ -1,8 +1,14 @@
 import React from 'react'
+import {useNavigate} from 'react-router-dom'
 
 function LearnTab() {
+    const navigate = useNavigate()
+    const handleGreenClick = () => {
+        navigate('/simulator')
+    }
   return (
-    <div className='flex flex-col gap-6 my-3 items-center'>
+    <div className='flex flex-col gap-6 my-3 items-center cursor-pointer'
+    onClick={handleGreenClick}>
         <div className='learn-green flex justify-evenly items-center w-80 h-44 p-2'>   
             <div className='flex flex-col justify-start gap-3 h-full'>
                 <h1>Challenge</h1>
