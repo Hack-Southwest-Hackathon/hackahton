@@ -20,7 +20,7 @@ class chatbot():
         with open(
             os.path.dirname(
                 os.path.abspath(__file__)
-                ) + '/' + self.mode + '.txt', 'r', encoding='utf-8'
+                ) + '/AI Prompts/' + self.mode + '.txt', 'r', encoding='utf-8'
             ) as prompt:
             self.prompt = prompt.read()
         
@@ -83,3 +83,5 @@ class chatbot():
         if self.mode in ["Bank","visa"]:
             return False
         return True
+    
+Dan = chatbot("Bank")
