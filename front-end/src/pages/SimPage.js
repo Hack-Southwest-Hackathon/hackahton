@@ -9,7 +9,7 @@ function SimPage() {
   useEffect(() => {
     const fetchData = () => {
       setIsLoading(true);
-      fetch('https://jsonplaceholder.typicode.com/todos/1')
+      fetch('http://127.0.0.1:5100/calls')
         .then(response => response.json())
         .then(data => {
             console.log(data)
