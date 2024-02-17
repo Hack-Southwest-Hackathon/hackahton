@@ -5,9 +5,115 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: all 0.5s ease-in-out;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.learn-pink {
+    border-radius: 20px;
+background: linear-gradient(107deg, #EC7B9C 0%, rgba(236, 123, 156, 0.50) 100%);
+}
+.db-title {
+    color: #000;
+
+font-family: "Playfair Display";
+font-size: 52px;
+font-style: normal;
+font-weight: 700;
+line-height: 52.4px; /* 100.769% */
+
+}
+
+.inactive-tab {
+    color: #998E8D;
+
+font-weight: 400;
+}
+.active-tab {
+    border-radius: 30px;
+border: 2px solid #0CCE6B;
+
+background: rgba(12, 206, 107, 0.20);
+}
+.learn-pink h1 {
+    color: #FFF;
+
+font-family: Poppins;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 31.4px; /* 157% */
+}
+
+.learn-pink p {
+    color: #FFF;
+    
+
+font-family: Poppins;
+font-size: 20px;
+font-style: normal;
+font-weight: 600;
+line-height: 36.4px;
+}
+
+.learn-green h1 {
+    color: #FFF;
+
+font-family: Poppins;
+font-size: 20px;
+font-style: normal;
+font-weight: 700;
+line-height: 31.4px; /* 157% */
+}
+
+.learn-green p {
+    color: #FFF;
+
+font-family: Poppins;
+font-size: 30px;
+font-style: normal;
+font-weight: 600;
+line-height: 36.4px;
+}
+
+.learn-green {
+    border-radius: 20px;
+background: linear-gradient(107deg, rgba(12, 206, 107, 0.60) 0%, #0CCE6B 100%);
+}
+
+.home-text {
+    color: #263238;
+
+font-family: Inter;
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 0.56px;
+}
+
+.home-title {
+    color: #000;
+
+text-align: center;
+font-family: "Playfair Display";
+font-size: 46px;
+font-style: normal;
+font-weight: 800;
+line-height: 46.4px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.page-container {
+    opacity: 1;
+  }
+  
+  .page-container.hidden {
+    opacity: 0;
+  }
