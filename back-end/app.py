@@ -4,7 +4,7 @@ from fraudbot import chatbot
 import json
 
 app = Flask(__name__)
-# chatbot = chatbot("Bank")
+chatbot = chatbot("Bank")
 
 gptoriginal = ["Hello! This is Dan from the bank. I'm here to inform you that we have detected a suspected fraudulent purchase on your account.",
                "You can either call the bank or visit us in branch.", "GPT RESPONSE 3", "GPT RESPONSE 4", "GPT RESPONSE 5"]
@@ -34,34 +34,38 @@ def read():
 @app.route("/quiz", methods=["GET", "POST"])
 def quiz():
     if request.method == "GET":
-        return get_questions()
+        return jsonify(get_questions())
 
     if request.method == "POST":
         quiz.attempt(request.get_json())
-        return get_questions()
+        return jsonify(get_questions())
 
 
 @app.route("/calls", methods=["GET", "POST"])
 def calls():
     if request.method == "GET":
 
-        # return chatbot.getfirstmessage()
-        return "GPT BANK CALL"
+        x = {
+            "outofattempts": "false",
+            "gptresponse": chatbot.getfirstmessage()
+        }
+
+        return jsonify(x)
 
     if request.method == "POST":
         data = request.get_json()
 
-        # if data['attempts'] == "5":
-        #    return "timetoguess"
-        # print(data['userinput'])
-
-        # print(chatbot.proccessresponse(data['userinput']))
-        # return chatbot.proccessresponse(data['userinput'])
-
         x = {
             "outofattempts": "false",
-            "gptresponse": "GPT BANK CALL next"
+            "gptresponse": chatbot.proccessresponse(data['userinput'])
         }
+
+        # return chatbot.proccessresponse(data['userinput'])
+
+        # x = {
+        #    "outofattempts": "false",
+        #    "gptresponse": "GPT BANK CALL next"
+        # }
 
         if data['attempts'] == "5":
             x["outofattempts"] = "true"
