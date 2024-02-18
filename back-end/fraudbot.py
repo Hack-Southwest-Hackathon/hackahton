@@ -33,6 +33,8 @@ class chatbot():
             }],
             stream=True)
 
+        self.calls  = 0
+        
         self.messagehistory = [{
             "role": "system", "content": self.prompt
         }, {
@@ -73,7 +75,7 @@ class chatbot():
             "role": "assistant",
             "content": " ".join(
                 [part.choices[0].delta.content or "" for part in self.stream])})
-
+        self.calls  += 1
         return self.messagehistory[-1]["content"]
 
     def getgoodorbad(self) -> bool:
