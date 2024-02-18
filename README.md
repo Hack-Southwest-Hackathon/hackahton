@@ -64,6 +64,46 @@ Dependencies can be installed via the command shell with the command:
 pip install flask flask_cors json
 ```
 
+# The Quiz 
+
+The Quiz module passes questions and answers to the backend, which in turn passes to the front end.  
+
+The module only depends on the JSON Library which can be installed with:
+```bash
+pip install python
+```  
+
+Initially a user must load the questions from the ```quiz_questions.json``` file i.e:
+```python
+import quiz
+quiz.load_questions()
+```
+
+Json files are formatted as
+```json
+{"data"[
+    {"question":<question(string)>,
+    "options":[
+        <option 1 (string)>,
+        <option 2 (string)>...],
+    "answer":<answer number (int)>},...
+]}
+```
+
+Then questions can be obtained as a dictionary via
+```python
+quiz.get_questions()
+```
+
+Finally, a user's submission from the front end can be processed with the command:
+```python
+quiz.attempt(<user answers (array)>)
+```  
+
+The array of answers should be formatted as an array of integers i.e:
+```python
+[0,2,1]
+```  
 
 # Authors
 - [Alex](https://github.com/Cosmospacedog) - Chatbot and additional backend  
