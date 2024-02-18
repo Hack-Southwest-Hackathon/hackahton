@@ -6,6 +6,7 @@ score = 0
 questions = {}
 attempted_results = []
 
+# load questions from json file
 def load_questions():
     f = open('quiz_questions.json')
     global questions
@@ -22,6 +23,7 @@ def get_attempts():
 def check_question(number, choice):
     return questions['data'][number]['answer'] == choice
 
+# attempt all the questions with the choices provided by the argument
 def attempt(choices):
     global attempted_results
     attempted_results = choices
@@ -32,5 +34,4 @@ def attempt(choices):
             score += 1
     return score
 
-
-load_questions() # This needs to run in order to load in the questions from the file
+load_questions() # this needs to run to intialise the questions from the json file
