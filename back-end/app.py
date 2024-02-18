@@ -6,7 +6,7 @@ apologies in advance Ed for messing with ur code HeHe - al
 from flask import Flask, request, jsonify, session, render_template
 from flask_cors import CORS
 from fraudbot import chatbot
-import quiz
+from quiz import quiz
 # import json
 
 
@@ -44,12 +44,12 @@ def read():
 @app.route("/quiz", methods=["GET", "POST"])
 def process_quiz():
     if request.method == "GET":
-        quiz.load_questions()
+        current_quiz = quiz()
         return jsonify(quiz.get_questions())
 
     if request.method == "POST":
-        quiz.attempt(request.get_json())
-        return jsonify(quiz.get_questions())
+        score = current_quiz.attempt(request.get_json())
+        return jsonify({"score": score,"total":current_quiz.no_of_questions})
 
 
 @app.route("/calls", methods=["GET", "POST"])
