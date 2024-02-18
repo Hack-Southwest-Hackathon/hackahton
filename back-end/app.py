@@ -8,6 +8,8 @@ from flask_cors import CORS
 from fraudbot import chatbot
 from quiz import quiz
 # import json
+global Dan
+global current_quiz
 
 current_quiz = quiz()
 app = Flask(__name__)
@@ -44,19 +46,16 @@ def read():
 @app.route("/quiz", methods=["GET", "POST"])
 def process_quiz():
     if request.method == "GET":
-        global current_quiz
         current_quiz = quiz()
         return jsonify(current_quiz.get_questions())
 
     if request.method == "POST":
-        global current_quiz
         score = current_quiz.attempt(request.get_json())
         return #jsonify({"score": score,"total":current_quiz.no_of_questions})
 
 
 @app.route("/calls", methods=["GET", "POST"])
 def process_calls():
-    global Dan
     if request.method == "GET":
         Dan = chatbot("Bank")
         x = {
