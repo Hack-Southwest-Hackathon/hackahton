@@ -22,10 +22,10 @@ function LibraryCard({course}) {
             height='10px' customLabel='    ' bgColor='#ED7B9C' baseBgColor='white'/>
             <div className='flex justify-between'>
                 <p className='font-bold'>{course.progress}/{course.max}</p>
-                {<div onClick={handleTabClick}
+                {course.isAvailable?<div onClick={handleTabClick}
                 className='bg-white flex justify-center items-center p-1 rounded-full cursor-pointer pl-'>
                     <FaPlay size={15}/>
-                </div>}
+                </div>:<></>}
             </div>
         </div>
     </div>
