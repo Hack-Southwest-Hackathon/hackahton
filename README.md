@@ -90,6 +90,12 @@ A Get request will trigger the quiz backend and cause it to load the questions f
 
 A post request will accept a json file containing an array of values which indicate a users answers. A score will then be calculated and returned.
 
+### Reflection interactions  
+
+Reflect requests are made through the ```/reflection``` domain.  
+
+When a get request is made, the backend passes the current scores to the ```reflection.py``` module, and returns the user's scores as well as their quiz results and a review of them
+
 # Reflection
 The reflection model provides performance analysis for a participant and provides a score.
 
