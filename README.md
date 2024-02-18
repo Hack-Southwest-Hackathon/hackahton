@@ -24,6 +24,8 @@ Design Images:
 ![screenie 3](https://i.imgur.com/zN130bz.png) ![Screenie 4](https://i.imgur.com/c2cxPIj.png)  
   
 To transfer the design to code, we used a plugin directly embed on VS Code while mantaining a constant communication channel between the Design and Development team. 
+
+For the Science Fair, we prepared several slides to display, available [here](https://www.canva.com/design/DAF9EaT-XKI/3gcLDvJTsMeSCG2lYRSQKw/edit?utm_content=DAF9EaT-XKI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
   
 # The Chatbot Module
 The fraud chatbot we used is a modified copy of openai's gpt3.5-turbo making use of their api and their new 'Assistants' feature allowing for the building of custom models.
@@ -166,6 +168,9 @@ We performed a market analysis that resulted in slides studying the evolution of
 ![Statista Fraud Offences England and Wales](https://www.statista.com/graphic/1/753249/fraud-offences-england-and-wales.jpg)
 ![Statista Fraud Prevention Market Worldwide](https://i.imgur.com/n1wYEfa.png)
 
+Our entire application design can be found [here](https://www.figma.com/file/wKuQl4zdzXesaabIR2OCgm/Frauducate?type=design&node-id=0%3A1&mode=design&t=qRu1KuwhBIwb7m4W-1)
+
+We prepared a presentation to display during the Fair in order to show our market analysis. [It is available here](https://www.canva.com/design/DAF9GUgcBoQ/Ov3FabN5baoc2FGt72Cw6Q/edit?utm_content=DAF9GUgcBoQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton).
 
 # Target User Persona
 Our plans is to first target international students, then move on to students in general and at a later stage provide several modules targeting other populations exposed to fraud. 
