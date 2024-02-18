@@ -19,13 +19,9 @@ class chatbot():
         key = ''
         with open(os.path.dirname(os.path.abspath(__file__)) + '/token.txt') as f:
             key = f.readline()
-
-        #  with open(os.path.dirname(os.path.abspath(__file__)) + '/token.txt') as f:
-        #     f.read()
         
         self.client = OpenAI(
             api_key=key
-            #api_key="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"
         )
 
         self.mode = mode
