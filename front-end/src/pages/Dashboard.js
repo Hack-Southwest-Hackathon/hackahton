@@ -3,6 +3,7 @@ import TabTitle from '../components/Dashboard/TabTitle';
 import LearnTab from '../components/Dashboard/LearnTab';
 import LibraryTab from '../components/Dashboard/LibraryTab';
 import CompletedTab from '../components/Dashboard/CompletedTab';
+import Logo from '../components/Logo';
 
 function Dashboard() {
     const tabs = [
@@ -16,6 +17,7 @@ function Dashboard() {
         setActiveTab(tabId);
     };
   return (
+    <>
     <div className='flex flex-col items-start p-4'>
         <h1 className='db-title'>Your <br/> Learnings</h1>
         <div className='flex flex-row w-full justify-evenly my-4'>
@@ -28,6 +30,7 @@ function Dashboard() {
             <CompletedTab/>}
         </div>
     </div>
+    <Logo /></>
   )
 }
 

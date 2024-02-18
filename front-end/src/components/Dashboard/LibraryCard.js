@@ -7,7 +7,7 @@ function LibraryCard({course}) {
     const navigate = useNavigate()
     const handleTabClick = () => {
         if (course.isAvailable) {
-            navigate('/quizzes')
+            navigate('/course')
         } else {
             return
         }
@@ -21,11 +21,11 @@ function LibraryCard({course}) {
             <ProgressBar completed={course.progress} maxCompleted={course.max}
             height='10px' customLabel='    ' bgColor='#ED7B9C' baseBgColor='white'/>
             <div className='flex justify-between'>
-                <p>{course.progress}/{course.max}</p>
-                <div onClick={handleTabClick}
+                <p className='font-bold'>{course.progress}/{course.max}</p>
+                {<div onClick={handleTabClick}
                 className='bg-white flex justify-center items-center p-1 rounded-full cursor-pointer pl-'>
                     <FaPlay size={15}/>
-                </div>
+                </div>}
             </div>
         </div>
     </div>

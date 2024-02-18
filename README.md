@@ -11,15 +11,19 @@ We plan to:
 
 - help reinforce this knowledge with fun interactive quizzes
 
-- Help put newfound knowledge to practical  use by having users interact with our specialized fraud chatbot - Dan - and check if he's an imposter among us.
-# Proposed Design
+- Help put newfound knowledge to practical use by having users interact with our specialized fraud chatbot - Dan - and check if he's an imposter among us.
 
+# Proposed Design
+We Have decided to go with a sleek modern design for the website, with a simple and user-friendly interface.  
+
+In details, we used Figma to create the logo and overall look & feel of the website/application. All the Content, including text, files, animations and images are copyright free for commercial use. The design takes inspiration from a market analysis of learning apps. We studied how those engage users with a positive and colorful UI/UX, trying to mimic this direction but adding our own brand identity. Our logo is designed as an svg, allowing for it to be used on any size and colors, easily downloadable due to it being light and always having perfect resolution. The other images also use SVGs. From a color point of view, we used a palette generator to have an harmonic set comprising of strong visual feedback, helping accessibility and engagement. For instance, the green / red mechanism for feedback delivery, or the chatbot interface. 
+
+Design Images:
 ![screenie 1](https://i.imgur.com/Fbp9qhu.png) ![screenie 2](https://i.imgur.com/MjGRtVp.png)  
   
 ![screenie 3](https://i.imgur.com/zN130bz.png) ![Screenie 4](https://i.imgur.com/c2cxPIj.png)  
   
-We Have decided to go with a sleek modern design for the website, with a simple and user-friendly interface.  
-  
+To transfer the design to code, we used a plugin directly embed on VS Code while mantaining a constant communication channel between the Design and Development team. 
   
 # The Chatbot Module
 The fraud chatbot we used is a modified copy of openai's gpt3.5-turbo making use of their api and their new 'Assistants' feature allowing for the building of custom models.
@@ -51,7 +55,7 @@ Then, the bot's initial response may be fetched via:
 Dan.getfirstmessage()
 ```
 
-Finally, users can send a message and obtain a response from the bot and check weather or not it had fraudulent intent, by using the commands:
+Finally, users can send a message and obtain a response from the bot and check wether or not it had fraudulent intent, by using the commands:
 
 ```python
 Dan.proccessresponse()
@@ -154,10 +158,30 @@ The array of answers should be formatted as an array of integers i.e:
 ```  
 
 # Front End
-Our front end is built around the react.js web framework. We designed it with mobile users in mind as we identified it as the platform of prefrence for our target audience.
+Our front end is built around the react.js web framework. We designed it with mobile users in mind as we identified it as the platform of preference for our target audience.
+
+# Market Analysis 
+We performed a market analysis that resulted in slides studying the evolution of the fraud market. As displayed by the adjacent pictures, it is unfortunately a growing and expanding market. But at Frauducation we can help mitigate that!
+
+![Statista Fraud Offences England and Wales](https://www.statista.com/graphic/1/753249/fraud-offences-england-and-wales.jpg)
+![Statista Fraud Prevention Market Worldwide](https://i.imgur.com/n1wYEfa.png)
+
+
+# Target User Persona
+Our plans is to first target international students, then move on to students in general and at a later stage provide several modules targeting other populations exposed to fraud. 
+
+Our first initial user persona is:
+Occupation: International Student
+Age: 18 to 25
+Country of Origin: Outside of the UK, especially if outside of Europe
+Engagement: Short attention span due to social medias, need to engage them with colors and quick moving content. 
+Technological Abilities: Highly used to technology and online learning 
+
+# Business Model
+To deliver our product to market, we plan to enter it via University Collaboration. While students are our target market, we do not expect them to pay for this service. However, our service being invaluable for universities, we can ask for compensation yearly by offering our services for free to each cohort. This would be a member based pricing, meaning that universities would pay a small price for each student they want to be able to access the program.  
 
 ## Demo
-![Frauducation Bot Example](https://i.imgur.com/NujtWCC.gif)
+![Frauducation Bot Example](https://i.imgur.com/ulkazyq.gif)
 
 # Authors
 - [Alex](https://github.com/Cosmospacedog) - Chatbot, additional backend and documentation  
@@ -166,7 +190,7 @@ Our front end is built around the react.js web framework. We designed it with mo
 - [Edward](https://github.com/Edguardia) - Flask backend
 - [Lorenzo](https://github.com/LorenzoSattaChiris) - Design  
 
-![THe guys](https://i.imgur.com/si7w4RG.png) - The team
+![The guys](https://i.imgur.com/si7w4RG.png) - The team
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
