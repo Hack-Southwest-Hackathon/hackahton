@@ -26,12 +26,14 @@ The fraud chatbot we used is a modified copy of openai's gpt3.5-turbo making use
 
 The chatbot is controlled via the ```fraudbot.py``` python file  
 
+- ## Instillation
+
 Its depends only on the openai api wrapper which can be installed via:
 ```bash
 pip install openai
 ```
 
-- ## usage
+- ## Usage
 First the user should select a model of to use the options are:
 - Bank
 - Visa
@@ -59,20 +61,27 @@ Dan.getgoodorbad()
 # The Backend
 Our web backend is written using flask, a python web development tool as well as using additional functionality from the json library for communicating with the front end.
 
+- ## Instillation
+
 Dependencies can be installed via the command shell with the command:
 ```bash
 pip install flask flask_cors json
 ```
 
+- ## Usage
+
+
 # The Quiz 
 
 The Quiz module passes questions and answers to the backend, which in turn passes to the front end.  
+
+- ## Instillation
 
 The module only depends on the JSON Library which can be installed with:
 ```bash
 pip install python
 ```  
-
+- ## Usage
 Initially a user must load the questions from the ```quiz_questions.json``` file i.e:
 ```python
 import quiz
@@ -85,7 +94,7 @@ Json files are formatted as
     {"question":<question(string)>,
     "options":[
         <option 1 (string)>,
-        <option 2 (string)>...],
+        <option 2 (string)>,...],
     "answer":<answer number (int)>},...
 ]}
 ```
