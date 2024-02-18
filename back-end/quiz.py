@@ -3,7 +3,7 @@ import json
 NO_OF_QUESTIONS = 5  # default
 score = 0
 
-questions = []
+questions = {}
 attempted_results = []
 
 def load_questions():
@@ -31,3 +31,6 @@ def attempt(choices):
         if check_question(i, choice):
             score += 1
     return score
+
+
+load_questions() # This needs to run in order to load in the questions from the file
