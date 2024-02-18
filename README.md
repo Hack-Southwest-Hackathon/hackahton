@@ -3,7 +3,7 @@
 Our submission for the February 2024 HSW Hackathon
 
 # The Idea
-Frauducate is a web-based mobile-oriented digital learning platform aimed at preventing foreign students from being taken advantage of during their onboarding process.
+Frauducate is a web-based mobile-oriented digital learning platform aimed at preventing international students from being taken advantage of during their onboarding process.
 
 We plan to:
 
@@ -113,7 +113,7 @@ Json files are formatted as
     "options":[
         <option 1 (string)>,
         <option 2 (string)>,...],
-    "answer":<answer number (int)>},...
+    "answer":<answer index (int)>},...
 ]}
 ```
 
