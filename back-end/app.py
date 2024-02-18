@@ -49,7 +49,7 @@ def process_quiz():
 
     if request.method == "POST":
         score = current_quiz.attempt(request.get_json())
-        return jsonify({"score": score,"total":current_quiz.no_of_questions})
+        return #jsonify({"score": score,"total":current_quiz.no_of_questions})
 
 
 @app.route("/calls", methods=["GET", "POST"])
