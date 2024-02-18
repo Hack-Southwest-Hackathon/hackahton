@@ -18,7 +18,7 @@ We Have decided to go with a sleek modern design for the website, with a simple 
 
 In details, we used Figma to create the logo and overall look & feel of the website/application. All the Content, including text, files, animations and images are copyright free for commercial use. The design takes inspiration from a market analysis of learning apps. We studied how those engage users with a positive and colorful UI/UX, trying to mimic this direction but adding our own brand identity. Our logo is designed as an svg, allowing for it to be used on any size and colors, easily downloadable due to it being light and always having perfect resolution. The other images also use SVGs. From a color point of view, we used a palette generator to have an harmonic set comprising of strong visual feedback, helping accessibility and engagement. For instance, the green / red mechanism for feedback delivery, or the chatbot interface. 
 
-Design Images:
+Design Images:  
 ![screenie 1](https://i.imgur.com/Fbp9qhu.png) ![screenie 2](https://i.imgur.com/MjGRtVp.png)  
   
 ![screenie 3](https://i.imgur.com/zN130bz.png) ![Screenie 4](https://i.imgur.com/c2cxPIj.png)  
