@@ -11,7 +11,7 @@ We plan to:
 
 - help reinforce this knowledge with fun interactive quizzes
 
-- Help put newfound knowledge to practical  use by having users interact with our specialized fraud chatbot - Dan - and check if he's an imposter or not.
+- Help put newfound knowledge to practical  use by having users interact with our specialized fraud chatbot - Dan - and check if he's an imposter among us.
 # Proposed Design
 
 ![screenie 1](https://i.imgur.com/Fbp9qhu.png) ![screenie 2](https://i.imgur.com/MjGRtVp.png)  
