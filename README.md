@@ -89,6 +89,21 @@ Quiz requests are made through the ```/quiz``` domain.
 A Get request will trigger the quiz backend and cause it to load the questions from the stored json and return it to the front end.
 
 A post request will accept a json file containing an array of values which indicate a users answers. A score will then be calculated and returned.
+
+# Reflection
+The reflection model provides performance analysis for a participant and provides a score.
+
+- ## Usage
+First the backend can create a reflection object and provide it appropriate scores. 
+```python
+from reflection import Reflection
+response = Reflection(0.4,1)
+```
+Then you can obtain a progress review with
+```python
+response.get_analysis()
+```
+
 # The Quiz 
 
 The Quiz module passes questions and answers to the backend, which in turn passes to the front end.  
@@ -141,7 +156,7 @@ Our front end is built around the react.js web framework. We designed it with mo
 # Authors
 - [Alex](https://github.com/Cosmospacedog) - Chatbot, additional backend and documentation  
 - [Thomas](https://github.com/duc-minh-droid) - Front End
-- [Benitas](https://github.com/Pulse77) - Quiz
+- [Benitas](https://github.com/) - Quiz
 - [Edward](https://github.com/Edguardia) - Flask backend
 - [Lorenzo](https://github.com/LorenzoSattaChiris) - Design  
 
