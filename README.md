@@ -57,6 +57,13 @@ Dan.getgoodorbad()
 ```
 
 # The Backend
+Our web backend is written using flask, a python web development tool as well as using additional functionality from the json library for communicating with the front end.
+
+Dependencies can be installed via the command shell with the command:
+```bash
+pip install flask flask_cors json
+```
+
 
 # Authors
 - [Alex](https://github.com/Cosmospacedog) - Chatbot and additional backend  
@@ -64,6 +71,7 @@ Dan.getgoodorbad()
 - [Benitas](https://github.com/pulse77) - Quiz
 - [Edward](https://github.com/Edguardia) - Flask backend
 - [Lorenzo](https://github.com/LorenzoSattaChiris) - Design  
+
 ![THe guys](https://i.imgur.com/si7w4RG.png) - The team
 ## License
 
