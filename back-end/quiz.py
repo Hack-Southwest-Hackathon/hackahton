@@ -7,7 +7,7 @@ questions = []
 attempted_results = []
 
 def load_questions():
-    f = open('C:\\Users\\Benit\\Desktop\\Programming\\hackathon\\data.json')
+    f = open('quiz_questions.json')
     global questions
     questions = json.load(f)
     f.close()
