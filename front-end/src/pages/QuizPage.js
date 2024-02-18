@@ -19,8 +19,14 @@ function QuizPage() {
       }
     };
 
-    const sendUserAnswers = (ans) => {
-        console.log(ans)
+    const sendUserAnswers = async (ans) => {
+        await fetch('http://127.0.0.1:5100/quiz', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(ans),
+        })
     }
 
     const handleFinishQuiz = () => {
