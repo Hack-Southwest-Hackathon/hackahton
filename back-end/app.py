@@ -8,11 +8,13 @@ from flask_cors import CORS
 from fraudbot import chatbot
 from quiz import quiz
 from random import shuffle
+from reflection import Reflection
 # import json
 chatoptions = ['Bank', 'Housing', 'Visa']
+shuffle(chatoptions)
 callscore = 0
 currentchat = 0
-
+quiz_score = 0
 current_quiz = quiz()
 app = Flask(__name__)
 
@@ -41,12 +43,14 @@ def read():
 
 @app.route("/quiz", methods=["GET", "POST"])
 def process_quiz():
+    global quiz_score
+    global current_quiz
     if request.method == "GET":
         return jsonify(current_quiz.get_questions())
 
     if request.method == "POST":
-        score = current_quiz.attempt(request.get_json())
-        return jsonify({"score": score, "total": current_quiz.no_of_questions})
+        quiz_score = current_quiz.attempt(request.get_json())
+        return jsonify({"score": quiz_score, "total": current_quiz.no_of_questions})
 
 
 @app.route("/calls", methods=["GET", "POST"])
@@ -76,6 +80,7 @@ def process_calls():
 
 @app.route("/checkanswer", methods=["POST"])
 def checkanswers():
+    global callscore
     global currentchat
     global Dan
     if request.method == "POST":
@@ -86,13 +91,13 @@ def checkanswers():
         return {}
 
 
-@app.route("/reflection", methods=["GET", "POST"])
+@app.route("/reflection", methods=["GET"])
 def reflection():
+    global callscore
     if request.method == "GET":
-        return "GET Request"
+        response = Reflection(quiz_score/5,callscore/3)
+        return jsonify({"response":response.get_analasys()})
 
-    if request.method == "POST":
-        return "POST Request"
 
 
 if __name__ == '__main__':
