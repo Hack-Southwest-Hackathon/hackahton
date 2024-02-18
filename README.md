@@ -11,7 +11,7 @@ We plan to:
 
 - help reinforce this knowledge with fun interactive quizzes
 
-- Help put newfound knowledge to practical  use by having users interact with our specialized fraud chatbot - Dan - and check if he's an imposter among us.
+- Help put newfound knowledge to practical use by having users interact with our specialized fraud chatbot - Dan - and check if he's an imposter among us.
 # Proposed Design
 
 ![screenie 1](https://i.imgur.com/Fbp9qhu.png) ![screenie 2](https://i.imgur.com/MjGRtVp.png)  
@@ -51,7 +51,7 @@ Then, the bot's initial response may be fetched via:
 Dan.getfirstmessage()
 ```
 
-Finally, users can send a message and obtain a response from the bot and check weather or not it had fraudulent intent, by using the commands:
+Finally, users can send a message and obtain a response from the bot and check wether or not it had fraudulent intent, by using the commands:
 
 ```python
 Dan.proccessresponse()
@@ -154,10 +154,10 @@ The array of answers should be formatted as an array of integers i.e:
 ```  
 
 # Front End
-Our front end is built around the react.js web framework. We designed it with mobile users in mind as we identified it as the platform of prefrence for our target audience.
+Our front end is built around the react.js web framework. We designed it with mobile users in mind as we identified it as the platform of preference for our target audience.
 
 ## Demo
-![Frauducation Bot Example](https://i.imgur.com/NujtWCC.gif)
+![Frauducation Bot Example](https://i.imgur.com/ulkazyq.gif)
 
 # Authors
 - [Alex](https://github.com/Cosmospacedog) - Chatbot, additional backend and documentation  
@@ -166,7 +166,7 @@ Our front end is built around the react.js web framework. We designed it with mo
 - [Edward](https://github.com/Edguardia) - Flask backend
 - [Lorenzo](https://github.com/LorenzoSattaChiris) - Design  
 
-![THe guys](https://i.imgur.com/si7w4RG.png) - The team
+![The guys](https://i.imgur.com/si7w4RG.png) - The team
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
