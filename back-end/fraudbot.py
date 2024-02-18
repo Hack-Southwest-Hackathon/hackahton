@@ -1,3 +1,7 @@
+'''
+This module controls the AI Chat
+bot and interfaces with the front end
+'''
 from openai import OpenAI
 import os
 
