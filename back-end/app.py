@@ -9,7 +9,7 @@ from fraudbot import chatbot
 from quiz import quiz
 from random import shuffle
 # import json
-chatoptions = ['Bank','Housing','Visa']
+chatoptions = ['Bank', 'Housing', 'Visa']
 callscore = 0
 currentchat = 0
 
@@ -46,7 +46,8 @@ def process_quiz():
 
     if request.method == "POST":
         score = current_quiz.attempt(request.get_json())
-        return jsonify({"score": score,"total":current_quiz.no_of_questions})
+        return jsonify({"score": score, "total": current_quiz.no_of_questions})
+
 
 @app.route("/calls", methods=["GET", "POST"])
 def process_calls():
@@ -72,7 +73,8 @@ def process_calls():
         }
         return jsonify(x)
 
-@app.route("/checkanswer",methods=["POST"])
+
+@app.route("/checkanswer", methods=["POST"])
 def checkanswers():
     global currentchat
     global Dan
@@ -82,6 +84,7 @@ def checkanswers():
             callscore += 1
         currentchat += 1
         return {}
+
 
 @app.route("/reflection", methods=["GET", "POST"])
 def reflection():

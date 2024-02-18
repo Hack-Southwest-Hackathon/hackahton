@@ -76,11 +76,11 @@ By default the flask server will be hosted [here](127.0.0.1:5100/)
 
 ### Chatbot Interactions
 
-Chatbot requests are made through the ```/call``` domain.  
+Chatbot requests are made through the ```/calls``` domain.  
 
 A get request signifies the creation of a new chat bot instance and thus creates a new global chat bot object (god rest our souls if two people use it at once).
 
-A push request signifies a user giving the chatbot a new prompt, and thus it is accompanied by a json containing the user's message as a string. this will then trigger the chatbot code to make an api request and generate and return a text response.
+A post request signifies a user giving the chatbot a new prompt, and thus it is accompanied by a json containing the user's message as a string. this will then trigger the chatbot code to make an api request and generate and return a text response.
 
 ### Quiz Interactions
 
