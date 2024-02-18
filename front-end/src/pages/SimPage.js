@@ -51,9 +51,20 @@ function SimPage() {
         postUserInput()
         setText('');
     };
-    console.log(conversation[conversation.length-1])
-    if (conversation.length) {
-        console.log((conversation[conversation.length-1].hasOwnProperty("gptresponse")? conversation[conversation.length-1].outofattempts : false)==="true")
+
+    const postAnswer = async (ans) => {
+        await fetch('http://127.0.0.1:5100/checkanswer', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({userinput: ans}),
+        });
+    }
+    
+    const handleAnswer = (ans) => {
+        postAnswer(ans)
+        navigate("/reflection")
     }
 
     return (
@@ -101,8 +112,10 @@ function SimPage() {
                         Is this a fraud?
                     </div>
                     <div className='flex flex-row justify-center w-full gap-4'>
-                        <button className=' border-green-300 p-2 bg-green-200 border-2 rounded-full px-6'>Yes</button>
-                        <button className=' border-red-300 p-2 bg-red-200 border-2 rounded-full px-6'>No</button>
+                        <button className=' border-green-300 p-2 bg-green-200 border-2 rounded-full px-6'
+                        onClick={()=>handleAnswer("Yes")}>Yes</button>
+                        <button className=' border-red-300 p-2 bg-red-200 border-2 rounded-full px-6'
+                        onClick={()=>handleAnswer("No")}>No</button>
                     </div>
                 </div>
                     :<form className='w-full' onSubmit={handleSubmit} style={{ position: "relative", display: "inline-block" }}>
