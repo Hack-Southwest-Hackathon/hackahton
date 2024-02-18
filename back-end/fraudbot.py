@@ -17,7 +17,7 @@ class chatbot():
         Bank
         '''
         key = ''
-        with open(os.path.dirname(os.path.abspath(__file__)) + '\\token.txt') as f:
+        with open(os.path.dirname(os.path.abspath(__file__)) + '/token.txt') as f:
             key = f.readline()
 
         #  with open(os.path.dirname(os.path.abspath(__file__)) + '/token.txt') as f:
