@@ -21,16 +21,13 @@ def get_attempts():
 # base 0 indexing
 def check_question(number, choice):
     return questions['data'][number]['answer'] == choice
-    #return questions[number]['answer'] == choice
 
 def attempt(choices):
     global attempted_results
     attempted_results = choices
     score = 0
-    for i in range(choices):
+    for i in range(len(choices)):
         choice = choices[i]
         if check_question(i, choice):
             score += 1
     return score
-
-load_questions()
