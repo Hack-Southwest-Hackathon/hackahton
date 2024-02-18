@@ -97,7 +97,7 @@ The Quiz module passes questions and answers to the backend, which in turn passe
 
 The module only depends on the JSON Library which can be installed with:
 ```bash
-pip install python
+pip install JSON
 ```  
 - ## Usage
 Initially a user must load the questions from the ```quiz_questions.json``` file i.e:
