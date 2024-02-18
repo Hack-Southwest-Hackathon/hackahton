@@ -7,24 +7,24 @@ questions = {}
 attempted_results = []
 
 # load questions from json file
-def load_questions():
-    f = open('quiz_questions.json')
+def load_questions() -> None:
+    f = open('quiz_questions.json') # you might need to add your full path idk its buggy for me
     global questions
     questions = json.load(f)
     f.close()
 
-def get_questions():
+def get_questions() -> dict:
     return questions
 
-def get_attempts():
+def get_attempts() -> list:
     return attempted_results
 
 # base 0 indexing
-def check_question(number, choice):
+def check_question(number : int, choice : int) -> bool:
     return questions['data'][number]['answer'] == choice
 
 # attempt all the questions with the choices provided by the argument
-def attempt(choices):
+def attempt(choices : list[int]) -> int:
     global attempted_results
     attempted_results = choices
     score = 0
