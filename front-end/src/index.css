@@ -7,6 +7,27 @@ body {
   -moz-osx-font-smoothing: grayscale;
   transition: all 0.5s ease-in-out;
 }
+.option-clicked {
+    border-radius: 1.25rem;
+padding: 0.5rem 1rem 0.5rem 1rem;
+transition: all 0.5s ease-in-out;margin-bottom: 1rem;
+    background: linear-gradient(107deg, #16BFFD 0%, #CB3066 100%);
+}
+.quiz-option {
+    border-radius: 1.25rem;
+background: linear-gradient(107deg, rgba(128, 128, 128, 0.60) 0%, #808080 100%);
+margin-bottom: 1rem;
+padding: 0.5rem 1rem 0.5rem 1rem;
+}
+.quizTab {
+    color: #000;
+text-align: center;
+font-family: Inter;
+font-size: 1.25rem;
+font-style: normal;
+font-weight: 700;
+line-height: 3.275rem; /* 262% */
+}
 .bot-status {
     color: #3ABF38;
 font-family: Nunito;
