@@ -1,8 +1,8 @@
 import React from 'react';
 
 function QuizCard({ quiz, val, setVal }) {
-  const handleInputChange = (event) => {
-    setVal(event.target.value);
+  const handleInputChange = (i) => {
+    setVal(i);
   };
 
   return (
@@ -15,9 +15,9 @@ function QuizCard({ quiz, val, setVal }) {
               type="radio"
               id={option}
               name="quiz"
-              value={option}
-              checked={val === option}
-              onChange={handleInputChange}
+              value={i}
+              checked={val === i}
+              onChange={()=>handleInputChange(i)}
               required={true}
             />
             <label htmlFor={option}>{option}</label>

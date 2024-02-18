@@ -88,9 +88,7 @@ function SimPage() {
                     }</div>)}
             </div>
             <div className='w-full flex justify-center'>
-                {isLoading && (
-                    <ThreeDots fill='gray' />
-                )}
+                
             </div>
             <div ref={bottomRef}></div>
             <div className='rounded-full w-full ' style={{ position: "fixed", bottom: 0, left: 0, right: 0, padding: "20px" }}>
