@@ -166,6 +166,7 @@ Our front end is built around the react.js web framework. We designed it with mo
 We performed a market analysis that resulted in slides studying the evolution of the fraud market. As displayed by the adjacent pictures, it is unfortunately a growing and expanding market. But at Frauducation we can help mitigate that!
 
 ![Statista Fraud Offences England and Wales](https://www.statista.com/graphic/1/753249/fraud-offences-england-and-wales.jpg)
+![Statista Fraud Complaints](https://i.imgur.com/InPS9KH.png)
 ![Statista Fraud Prevention Market Worldwide](https://i.imgur.com/n1wYEfa.png)
 
 Our entire application design can be found [here](https://www.figma.com/file/wKuQl4zdzXesaabIR2OCgm/Frauducate?type=design&node-id=0%3A1&mode=design&t=qRu1KuwhBIwb7m4W-1)
