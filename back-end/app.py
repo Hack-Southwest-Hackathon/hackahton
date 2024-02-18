@@ -98,8 +98,8 @@ def reflection():
     if request.method == "GET":
         response = Reflection(quiz_score/5,callscore/3)
         return jsonify({"quiz": f'You got {quiz_score}/5 on the quiz',
-                        "call":f'You guessed {callscore}/3 callers correctly',
-                        "response":response.get_analasys()})
+                        "call":f'You guessed {callscore}/1 callers correctly',
+                        "response":response.get_analysis()})
 
 
 
