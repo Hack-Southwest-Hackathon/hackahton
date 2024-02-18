@@ -93,7 +93,7 @@ A post request will accept a json file containing an array of values which indic
 
 The Quiz module passes questions and answers to the backend, which in turn passes to the front end.  
 
-- ## Instillation
+- ## Installation
 
 The module only depends on the JSON Library which can be installed with:
 ```bash
