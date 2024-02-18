@@ -53,7 +53,7 @@ function SimPage() {
     };
     console.log(conversation[conversation.length-1])
     if (conversation.length) {
-        console.log(conversation[conversation.length-1].hasOwnProperty("gptresponse")? conversation[conversation.length-1].outofattempts : false)
+        console.log((conversation[conversation.length-1].hasOwnProperty("gptresponse")? conversation[conversation.length-1].outofattempts : false)==="true")
     }
 
     return (
@@ -97,14 +97,14 @@ function SimPage() {
                 
                 { !conversation.length? <ThreeDots fill='gray' />
                 : 
-                (conversation[conversation.length-1].hasOwnProperty("gptresponse")? conversation[conversation.length-1].outofattempts : false)===true? 
-                <div className='flex flex-col mx-10 bg-slate-100'>
-                    <div>
+                (conversation[conversation.length-1].hasOwnProperty("gptresponse")? conversation[conversation.length-1].outofattempts : false)==="true"? 
+                <div className='flex flex-col mx-10 items-center gap-2 w-full justify-center'>
+                    <div className='border border-slate-300 p-2 bg-slate-200 rounded-full px-6'>
                         Is this a fraud?
                     </div>
-                    <div className='flex flex-row justify-evenly'>
-                        <button>Yes</button>
-                        <button>No</button>
+                    <div className='flex flex-row justify-center w-full gap-4'>
+                        <button className=' border-green-300 p-2 bg-green-200 border-2 rounded-full px-6'>Yes</button>
+                        <button className=' border-red-300 p-2 bg-red-200 border-2 rounded-full px-6'>No</button>
                     </div>
                 </div>
                     :<form className='w-full' onSubmit={handleSubmit} style={{ position: "relative", display: "inline-block" }}>
