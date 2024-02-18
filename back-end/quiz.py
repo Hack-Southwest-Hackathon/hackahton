@@ -1,61 +1,36 @@
 import json
-import random
-
-
-# preventing fraudulent calls
-# 3 ideas/pages about prevening fraud calls
-
 
 NO_OF_QUESTIONS = 5  # default
-current_question = 0
 score = 0
 
-questions = []
+questions = {}
+attempted_results = []
 
-def load_questions(n):
-    f = open('questions.json')
-    all_questions = json.load(f.read())
-
+def load_questions():
+    f = open('quiz_questions.json')
     global questions
-    questions = random.sample(all_questions, n)
+    questions = json.load(f)
     f.close()
 
 def get_questions():
     return questions
 
-def attempt_question(number, choice):
-    return questions[number]['answer'] == choice
+def get_attempts():
+    return attempted_results
+
+# base 0 indexing
+def check_question(number, choice):
+    return questions['data'][number]['answer'] == choice
 
 def attempt(choices):
-    for i in range(choices):
+    global attempted_results
+    attempted_results = choices
+    score = 0
+    for i in range(len(choices)):
         choice = choices[i]
-        if attempt_question(i, choice):
+        if check_question(i, choice):
             score += 1
+    return score
 
 
-
-# def load():
-#     current_question = 1
-
-
-# def get_next_question():
-#     current_question += 1
-#     question['number'] = current_question
-#     question['question'] = "what is 2+2?"
-#     question['options'] = ['yes', 'no', 'maybe', '4']
-#     question['answer'] = 3
-
-
-# def attempt(choice):
-#     if question['answer'] == choice:
-#         score += 1
-#         return True
-#     return False
-
-
-# def get_question():
-#     return question
-
-
-# str:arr:int
-# question:[options]:answer
+load_questions() # This needs to run in order to load in the questions from the file
