@@ -7,7 +7,7 @@ import json
 
 app = Flask(__name__)
 CORS(app)
-chatbot = chatbot("Bank")
+Dan = chatbot("Bank")
 
 gptoriginal = ["Hello! This is Dan from the bank. I'm here to inform you that we have detected a suspected fraudulent purchase on your account.",
                "You can either call the bank or visit us in branch.", "GPT RESPONSE 3", "GPT RESPONSE 4", "GPT RESPONSE 5"]
@@ -46,25 +46,25 @@ def quiz():
 
 @app.route("/calls", methods=["GET", "POST"])
 def calls():
+    global Dan
     if request.method == "GET":
-
+        Dan = chatbot("Bank")
         x = {
             "outofattempts": "false",
-            "gptresponse": chatbot.getfirstmessage()
+            "gptresponse": Dan.getfirstmessage()
         }
 
         return jsonify(x)
 
     if request.method == "POST":
-        print(chatbot.calls)
         data = request.get_json()
-        if chatbot.calls < 5:
+        if Dan.calls < 4:
             ooa = "false"
         else:
             ooa = "true"
         x = {
             "outofattempts": ooa,
-            "gptresponse": chatbot.proccessresponse(data['userinput'])
+            "gptresponse": Dan.proccessresponse(data['userinput'])
         }
 
         # return chatbot.proccessresponse(data['userinput'])
