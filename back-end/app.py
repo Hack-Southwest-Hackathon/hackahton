@@ -1,3 +1,8 @@
+'''
+The is module controls the python-flask backend
+ 
+apologies in advance Ed for messing with ur code HeHe - al
+'''
 from flask import Flask, request, jsonify, session, render_template
 from flask_cors import CORS
 from fraudbot import chatbot
