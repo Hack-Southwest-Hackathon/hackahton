@@ -5,7 +5,7 @@ function LibraryTab() {
     const courses = [{
         title: "International Student Training",
         desc: "Protect Yourself",
-        progress: 5,
+        progress: 2,
         max: 5,
         color: "bg-[#FFE7EE]",
         isAvailable: true

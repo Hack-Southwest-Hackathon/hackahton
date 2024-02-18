@@ -62,7 +62,7 @@ function QuizPage() {
         <div className='flex flex-row justify-around items-center py-5 px-3 w-full'>
             <FaArrowLeft size={25} onClick={()=>nav(-1)}/>
             <div className='quizTab'>Preventing Fraudulent Calls</div>
-            <IoHome size={25}/>
+            <IoHome size={25}  onClick={()=>nav('/dashboard')}/>
         </div>
         {isLoading || !quizzes.length ? <ThreeDots fill='gray' /> : <>
         <QuizCard

@@ -5,6 +5,7 @@ import QuizPage from "./pages/QuizPage"
 import SimPage from "./pages/SimPage"
 import ReflectionPage from "./pages/ReflectionPage"
 import Dashboard from "./pages/Dashboard"
+import CoursePage from "./pages/CoursePage"
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <Home/> } />
         <Route path="/info" element={ <InfoPage/> } />
+        <Route path="/course" element={ <CoursePage/> } />
         <Route path="/quizzes" element={ <QuizPage/> } />
         <Route path="/simulator" element={ <SimPage/> } />
         <Route path="/dashboard" element={ <Dashboard/> } />
