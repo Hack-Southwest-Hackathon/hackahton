@@ -7,7 +7,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
   transition: all 0.5s ease-in-out;
 }
+.bot-status {
+    color: #3ABF38;
+font-family: Nunito;
+font-size: 17px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+.bot-name {
+    color: var(--blue, #3369FF);
+    font-family: Nunito;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
