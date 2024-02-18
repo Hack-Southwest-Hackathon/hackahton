@@ -26,7 +26,7 @@ The fraud chatbot we used is a modified copy of openai's gpt3.5-turbo making use
 
 The chatbot is controlled via the ```fraudbot.py``` python file  
 
-- ## Instillation
+- ## Installation
 
 Its depends only on the openai api wrapper which can be installed via:
 ```bash
@@ -61,7 +61,7 @@ Dan.getgoodorbad()
 # The Backend
 Our web backend is written using flask, a python web development tool as well as using additional functionality from the json library for communicating with the front end.
 
-- ## Instillation
+- ## Installation
 
 Dependencies can be installed via the command shell with the command:
 ```bash
