@@ -163,6 +163,10 @@ Our front end is built around the react.js web framework. We designed it with mo
 # Market Analysis 
 We performed a market analysis that resulted in slides studying the evolution of the fraud market. As displayed by the adjacent pictures, it is unfortunately a growing and expanding market. But at Frauducation we can help mitigate that!
 
+![Statista Fraud Offences England and Wales](https://www.statista.com/graphic/1/753249/fraud-offences-england-and-wales.jpg)
+![Statista Fraud Prevention Market Worldwide](https://i.imgur.com/n1wYEfa.png)
+
+
 # Target User Persona
 Our plans is to first target international students, then move on to students in general and at a later stage provide several modules targeting other populations exposed to fraud. 
 
