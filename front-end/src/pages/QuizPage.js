@@ -34,7 +34,7 @@ function QuizPage() {
             },
             body: JSON.stringify(ans),
         })
-        .then(e=>nav('/reflection'))
+        .then(e=>nav('/dashboard'))
     }
 
     const handleFinishQuiz = () => {

@@ -2,7 +2,7 @@ import React from 'react'
 
 function CompletedTab() {
   return (
-    <div>CompletedTab</div>
+    <div>There is no completed tab at the moment.</div>
   )
 }
 
