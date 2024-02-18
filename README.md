@@ -135,10 +135,13 @@ The array of answers should be formatted as an array of integers i.e:
 # Front End
 Our front end is built around the react.js web framework. We designed it with mobile users in mind as we identified it as the platform of prefrence for our target audience.
 
+## Demo
+![Frauducation Bot Example](https://i.imgur.com/NujtWCC.gif)
+
 # Authors
 - [Alex](https://github.com/Cosmospacedog) - Chatbot, additional backend and documentation  
 - [Thomas](https://github.com/duc-minh-droid) - Front End
-- [Benitas](https://github.com/pulse77) - Quiz
+- [Benitas](https://github.com/ lse77) - Quiz
 - [Edward](https://github.com/Edguardia) - Flask backend
 - [Lorenzo](https://github.com/LorenzoSattaChiris) - Design  
 
