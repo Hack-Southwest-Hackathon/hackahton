@@ -51,7 +51,10 @@ function SimPage() {
         postUserInput()
         setText('');
     };
-    console.log(conversation)
+    console.log(conversation[conversation.length-1])
+    if (conversation.length) {
+        console.log(conversation[conversation.length-1].hasOwnProperty("gptresponse")? conversation[conversation.length-1].outofattempts : false)
+    }
 
     return (
         <div className='my-10 pb-20'>
@@ -92,7 +95,9 @@ function SimPage() {
             <div ref={bottomRef}></div>
             <div className='rounded-full w-full ' style={{ position: "fixed", bottom: 0, left: 0, right: 0, padding: "20px" }}>
                 
-                { conversation[conversation.length-1].outofattempts? 
+                { !conversation.length? <ThreeDots fill='gray' />
+                : 
+                (conversation[conversation.length-1].hasOwnProperty("gptresponse")? conversation[conversation.length-1].outofattempts : false)===true? 
                 <div className='flex flex-col mx-10 bg-slate-100'>
                     <div>
                         Is this a fraud?
