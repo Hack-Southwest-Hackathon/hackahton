@@ -4,7 +4,7 @@ bot and interfaces with the front end
 '''
 from openai import OpenAI
 import os
-
+chatoptions = ['Bank','Housing','Visa']
 
 class chatbot():
     def __init__(self, mode: str) -> None:

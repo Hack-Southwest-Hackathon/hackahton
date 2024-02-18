@@ -7,14 +7,18 @@ from flask import Flask, request, jsonify, session, render_template
 from flask_cors import CORS
 from fraudbot import chatbot
 from quiz import quiz
+from random import shuffle
 # import json
+chatoptions = shuffle(['Bank','Housing','Visa'])
+callscore = 0
+currentchat = 0
 
 current_quiz = quiz()
 app = Flask(__name__)
 
 CORS(app)
 
-# Dan = chatbot("Bank")
+Dan = chatbot(chatoptions[currentchat])
 
 # gptoriginal = ["Hello! This is Dan from the bank. I'm here to inform you that we have detected a suspected fraudulent purchase on your account.",
 #                "You can either call the bank or visit us in branch.", "GPT RESPONSE 3", "GPT RESPONSE 4", "GPT RESPONSE 5"]
@@ -50,16 +54,15 @@ def process_quiz():
         score = current_quiz.attempt(request.get_json())
         return jsonify({"score": score,"total":current_quiz.no_of_questions})
 
-
 @app.route("/calls", methods=["GET", "POST"])
 def process_calls():
     if request.method == "GET":
-        Dan = chatbot("Bank")
+        Dan = chatbot(chatoptions[currentchat])
         x = {
             "outofattempts": "false",
             "gptresponse": Dan.getfirstmessage()
         }
-
+        currentchat += 1
         return jsonify(x)
 
     if request.method == "POST":
@@ -74,6 +77,13 @@ def process_calls():
         }
         return jsonify(x)
 
+@app.route("/checkanswer",methods=["POST"])
+def checkanswers():
+    if request.method == "POST":
+        data = request.get_json()
+        if data['userinput'] == Dan.getgoodorbad():
+            callscore += 1
+        return {}
 
 @app.route("/reflection", methods=["GET", "POST"])
 def reflection():
