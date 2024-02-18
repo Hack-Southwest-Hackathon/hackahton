@@ -18,8 +18,10 @@ def get_questions():
 def get_attempts():
     return attempted_results
 
+# base 0 indexing
 def check_question(number, choice):
-    return questions[number]['answer'] == choice
+    return questions['data'][number]['answer'] == choice
+    #return questions[number]['answer'] == choice
 
 def attempt(choices):
     global attempted_results
