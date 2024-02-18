@@ -15,7 +15,9 @@ class quiz:
         
         self.no_of_questions = 5
         
-        with open(os.path.dirname(os.path.abspath(__file__)) + '/quiz_questions.json') as f:
+        with open(os.path.dirname(
+            os.path.abspath(__file__)
+            ) + '/quiz_questions.json') as f:
             self.questions = json.load(f)
         
         

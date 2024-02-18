@@ -94,9 +94,12 @@ def checkanswers():
 @app.route("/reflection", methods=["GET"])
 def reflection():
     global callscore
+    global quiz_score
     if request.method == "GET":
         response = Reflection(quiz_score/5,callscore/3)
-        return jsonify({"response":response.get_analasys()})
+        return jsonify({"quiz": f'You got {quiz_score}/5 on the quiz',
+                        "call":f'You guessed {callscore}/3 callers correctly',
+                        "response":response.get_analasys()})
 
 
 
