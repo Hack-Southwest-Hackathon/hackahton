@@ -45,7 +45,7 @@ def read():
 def process_quiz():
     if request.method == "GET":
         current_quiz = quiz()
-        return jsonify(quiz.get_questions())
+        return jsonify(current_quiz.get_questions())
 
     if request.method == "POST":
         score = current_quiz.attempt(request.get_json())
