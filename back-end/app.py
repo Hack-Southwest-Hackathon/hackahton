@@ -56,6 +56,7 @@ def calls():
         return jsonify(x)
 
     if request.method == "POST":
+        print(chatbot.calls)
         data = request.get_json()
         if chatbot.calls < 5:
             ooa = "false"
